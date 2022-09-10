@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link href="../static/css/log.css" rel="stylesheet" />
+  </head>
+  <body onload="mess()">
+    <script>
+      function mess() {
+        if ("{{val}}" == "wrong") {
+          alert("Wrong Password");
+        } else if ("{{val}}" == "no user") {
+          alert("User doesn't exist");
+        }
+      }
+    </script>
+    <div class="form-box">
+      <div class="header-text">Login Form</div>
+      <form method="POST" id="form2">
+        <input name="user_name" placeholder="Username" type="text" />
+        <input name="pass" placeholder="Password" type="password" />
+        <button type="submit" form="form2" value="Submit">login</button>
+      </form>
+      <a href="{{url_for('signip_page')}}"
+        >Don't Have a account ?Sign up here</a
+      >
+    </div>
+  </body>
+</html>

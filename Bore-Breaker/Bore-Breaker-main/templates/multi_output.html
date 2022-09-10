@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bore Breaker_Results</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="../static/css/noscript.css"
+    /></noscript>
+    <style>
+      .border{
+        border-bottom: 1px solid #ccc!important;
+        border-color: #f44336!important;
+      }
+      h3{
+        text-transform: capitalize !important;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <span class="title">Bore Breaker</span>
+          </a>
+
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>HI {{value}}</h2>
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="{{url_for('home_page')}}">Login</a></li>
+          <li><a href="{{url_for('movies')}}">Movies</a></li>
+          <li><a href="{{url_for('future')}}">Music</a></li>
+          <li><a href="{{url_for('future')}}">Books</a></li>
+          <li><a href="{{url_for('signip_page')}}">Signup</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <header>
+            <h1>
+              This is Bore Breaker, one destination for breaking boredom<br />
+            </h1>
+           <!---- <form method="post" id="form1">
+              <div>
+                <span style="font-size: large; align-self: center;">Title</span>
+                <input type="text" name="title" id="ff" />
+              </div>
+              <br />
+              <div>
+                <span>Actor</span>
+                <input type="text" name="actor" />
+              </div>
+              <br />
+              <div>
+                <div class="dropdown">
+                  <span>Genre</span>
+                  <select name="genre" class="dropdown-content">
+                    <option value="eee">empty</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                  </select>
+                </div>
+              </div>
+              <button class="ki" type="submit" form="form1" value="Submit">
+                Submit
+              </button>
+            </form>-->
+           <!---- <input type="text" class="search-box" value ="Search Here for Movies!!!" onchange="search()" placeholder="Search movies">
+            <p></p>-->
+          </header>
+    {% for data in datas %}
+    <div class="border">
+    <h2>Title : {{data["Title"]}}</h2>
+    <img src="{{data["Poster"]}}" alt="">
+    <h3>Released : {{data["Released"]}}</h3>
+    <h3>Rated : {{data["Rated"]}}</h3>
+    <h3>Genre : {{data["Genre"]}}</h3>
+    <h3>Director : {{data["Director"]}}</h3>
+    <h3>Cast : {{data["Actors"]}}</h3>
+    <h3>IMDB rating : {{data["imdbRating"]}}</h3>
+    <h3>Runtime : {{data["Runtime"]}}</h3>
+    <h3>Language : {{data["Language"]}}</h3>
+    <h3>imdbID : {{data["imdbID"]}}</h3>
+    <h3>Plot : {{data["Plot"]}}</h3>
+    </div>
+    <br>
+    <br>
+    {% endfor %}
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

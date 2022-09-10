@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign-up</title>
+    <link href="../static/css/log.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="form-box">
+      <div class="header-text">Sign-up Form</div>
+      <form method="POST" id="form2">
+        <input name="user_name" placeholder="Username" type="text" />
+        <input name="pass" placeholder="Password" type="password" />
+        <input name="repass" placeholder="re-enter password" type="password" />
+        <button type="submit" form="form2" value="Submit">Sign up</button>
+      </form>
+      <p>
+        <a href="{{url_for('home_page')}}">Already had an account,Login Here</a>
+      </p>
+    </div>
+  </body>
+</html>
